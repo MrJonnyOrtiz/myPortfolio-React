@@ -28,7 +28,7 @@ const projects = [
     id: 2,
     url: '/SRDdemo202312.mp4',
     title: 'Sarasota Remodeling Web App',
-    tech: 'React, React Router, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SNS, Route53), Google ReCaptcha, Google Analytics',
+    tech: 'React, React Router, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SNS, Route53, DynamoDB), Google ReCaptcha, Google Analytics',
     problem: "Modernize Client's website",
     solution:
       "Modern, responsive web app showcasing Client's work, blog posts, and reviews.",
@@ -36,6 +36,18 @@ const projects = [
     github: 'https://github.com/MrJonnyOrtiz/srd-React',
     description:
       "This client needed to migrate from a very basic and limited Go Daddy website with no features other than a few images of their work to a modern, responsive and robust web app that featured their remodeling images in elegant galleries, provided a contact form for visitors, and listed their clients' reviews. This client also wanted to post blog articles on remodeling topics on a regular basis to help inform visitors on all aspects of home remodeling. I created a custom modern, responsive, and feature-rich website for the client that met all their needs. I also write and publish the blog posts on a regular basis. I created a CI/CD pipeline using Github Actions to continuously deploy new content as I add it. This client averages a message a month submitted via the contact form on the website in 2023. According to Google analytics, visitors frequent the galleries especially the kitchen and bath galleries as well as the blog posts.",
+  },
+  {
+    id: 3,
+    url: '/ginaZphotoVideo202312.mp4',
+    title: 'Gina Z Photography Website',
+    tech: 'React, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SNS, Route53), Google ReCaptcha',
+    problem: 'Create Client website',
+    solution: "Modern, responsive website showcasing Client's work.",
+    site: 'https://ginazphoto.com',
+    github: 'https://github.com/MrJonnyOrtiz/ginaZphoto-React',
+    description:
+      'This client needed to showcase their photography work. I created a modern, responsive website that featured their photography in an elegant carousel as well as a contact form for visitors. I created a CI/CD pipeline using Github Actions to continuously deploy new photography content as I add it.',
   },
 ];
 
