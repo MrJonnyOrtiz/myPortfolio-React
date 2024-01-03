@@ -19,8 +19,8 @@ function AppLayout() {
       <footer className="flex flex-row-reverse sm:col-span-2">
         <div>
           <p className="text-center">
-            &copy; {new Date().getFullYear()}&nbsp;Jonny Ortiz. All rights
-            reserved.
+            &copy; {new Date().getFullYear()}&nbsp;Jonny Ortiz &dash; All rights
+            reserved
           </p>
         </div>
       </footer>
