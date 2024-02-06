@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 export default function Bio() {
   return (
-    <ul className="grid gap-8 text-xl">
+    <ul className="grid gap-8 text-xl md:text-2xl lg:text-4xl">
       <li className="mx-auto max-w-prose">
         I&apos;m a Full Stack Web Developer with a passion for creating
         intuitive and functional web applications that provide a value-added

@@ -140,7 +140,7 @@ export default function ContactForm() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <p id="emailHelp" className="text-xs italic">
-            We&apos;ll never share your email with anyone else.
+            I&apos;ll never share your email with anyone else.
           </p>
           <p className="invisible animate-pulse text-sm text-black peer-invalid:visible">
             Please provide a valid email address.

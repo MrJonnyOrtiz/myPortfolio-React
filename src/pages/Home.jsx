@@ -11,7 +11,9 @@ function Home() {
 
   return (
     <div className="grid gap-8 text-center">
-      <h1 className="text-3xl">Welcome to my online portfolio!</h1>
+      <h1 className="text-3xl md:text-5xl lg:text-7xl">
+        Welcome to my online portfolio!
+      </h1>
       <Bio />
       {/* <Carousel slides={projects} /> */}
     </div>

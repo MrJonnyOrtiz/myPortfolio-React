@@ -10,7 +10,7 @@ function Projects({ projects }) {
 
   return (
     <div className="grid gap-8">
-      <h1 className="text-center text-3xl">Projects</h1>
+      <h1 className="text-center text-3xl md:text-5xl lg:text-7xl">Projects</h1>
       <h2 className="animate-pulse text-center text-xl font-semibold">
         Click on a project for more details!
       </h2>

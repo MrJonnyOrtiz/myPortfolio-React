@@ -28,7 +28,7 @@ export default function About() {
 
   return (
     <div className="grid gap-8 text-center">
-      <h2 className=" text-3xl">About me</h2>
+      <h2 className="text-3xl md:text-5xl lg:text-7xl">About me</h2>
 
       <div className="sm:hidden">
         <img
@@ -40,22 +40,22 @@ export default function About() {
         />
       </div>
 
-      <ul className="grid gap-8">
-        <lip className="mx-auto max-w-prose text-xl">
+      <ul className="grid gap-8 text-xl md:text-2xl lg:text-4xl">
+        <li className="mx-auto max-w-prose ">
           I have a strong command of the below technologies, tools, and
           practices.
-        </lip>
-        <li className="mx-auto max-w-prose text-xl">
+        </li>
+        <li className="mx-auto max-w-prose ">
           My academic background, combined with my practical experience, equips
           me with a well-rounded skill set to tackle diverse challenges.
         </li>
-        <li className="mx-auto max-w-prose text-xl">
+        <li className="mx-auto max-w-prose ">
           I&apos;m always open to new opportunities, collaborations, and
           exciting projects so if you&apos;re looking for a solution-oriented
           partner with the experience to understand your needs and make your
           digital vision a reality,{' '}
           <Link to="/contact">
-            <span className="animate-pulse rounded-xl bg-[#ff914d] px-2 py-1 hover:animate-none hover:bg-white hover:text-black ">
+            <span className="animate-pulse rounded-xl bg-[#ff914d] px-2 py-1 hover:animate-none hover:bg-white hover:text-black md:py-0 ">
               contact me!
             </span>
           </Link>
