@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function Project({ projects }) {
   const { projectId } = useParams();
 
   const project = projects?.find((p) => p.id === +projectId);
 
-  const { title, problem, solution, tech, description, url, github, site } =
+  const { id, title, problem, solution, tech, description, url, github, site } =
     project;
+
+  console.log('id', id);
 
   useEffect(() => {
     window.gtag('event', `${project.title}`);
@@ -41,26 +43,39 @@ function Project({ projects }) {
         <p className="max-w-[32ch] sm:max-w-prose">
           <span className="font-semibold">Description</span>: {description}
         </p>
-        <p className="mx-auto max-w-[32ch] sm:max-w-prose">
-          <a
-            className=" animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
-            href={site}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Website
-          </a>
-        </p>
-        <p className="mx-auto max-w-[32ch] sm:max-w-prose">
-          <a
-            className="animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
-            href={github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github
-          </a>
-        </p>
+        {id !== 1 ? (
+          <>
+            <p className="mx-auto max-w-[32ch] sm:max-w-prose">
+              <a
+                className=" animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
+                href={site}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Website
+              </a>
+            </p>
+            <p className="mx-auto max-w-[32ch] sm:max-w-prose">
+              <a
+                className="animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Github
+              </a>
+            </p>
+          </>
+        ) : (
+          <p className="text-center">
+            <Link to="/contact">
+              <span className="rounded-xl bg-[#ff914d]/[.8] px-2 font-semibold hover:text-black">
+                Contact
+              </span>
+            </Link>
+            &nbsp;me for more information!
+          </p>
+        )}
       </div>
     </div>
   );
