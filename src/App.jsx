@@ -15,7 +15,7 @@ const projects = [
   {
     id: 1,
     url: '/TheWildOasisBookingFeature.mp4',
-    title: 'Self study booking app',
+    title: 'Self study Booking App',
     tech: 'React, Styled Components, React Router, React icons, React Query, React Hot Toast, React Hook Form, reCharts, React Error Boundary, AWS (Elastic Beanstalk)',
     problem: 'Manage hotel bookings',
     solution: 'Intuitive and modern web-based cabin management system.',
@@ -28,7 +28,7 @@ const projects = [
     id: 2,
     url: '/SRDdemo202312.mp4',
     title: 'Sarasota Remodeling Web App',
-    tech: 'React, React Router, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SNS, Route53, DynamoDB), Google ReCaptcha, Google Analytics',
+    tech: 'React, React Router, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SES, Route53, DynamoDB), Google ReCaptcha, Google Analytics',
     problem: "Modernize Client's website",
     solution:
       "Modern, responsive web app showcasing Client's work, blog posts, and reviews.",
@@ -41,13 +41,27 @@ const projects = [
     id: 3,
     url: '/ginaZphotoVideo202312.mp4',
     title: 'Gina Z Photography Website',
-    tech: 'React, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SNS, Route53), Google ReCaptcha',
+    tech: 'React, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SES, Route53), Google ReCaptcha',
     problem: 'Create Client website',
     solution: "Modern, responsive website showcasing Client's work.",
     site: 'https://ginazphoto.com',
     github: 'https://github.com/MrJonnyOrtiz/ginaZphoto-React',
     description:
       'This client needed to showcase their photography work. I created a modern, responsive website that featured their photography in an elegant carousel as well as a contact form for visitors. I created a CI/CD pipeline using Github Actions to continuously deploy new photography content as I add it.',
+  },
+  {
+    id: 4,
+    url: '/foodieTrekker20240712.mp4',
+    title: 'Foodie Trekker Web App',
+    tech: 'React, React Hot Toast, Headless UI, Tailwind CSS, Google Maps, AWS (CloudFormation, S3, CloudFront, Cognito, API Gateway, ACM, Lambda, DynamoDB, SES, Route53)',
+    problem:
+      'Centralized web-based app for users to log their dining experiences, and plan future visits seamlessly.',
+    solution:
+      'Modern, responsive web app to track dining experiences (places, visits, and meals) and future plans, record details about visits (date, time, meal type), meals (entrees, sides, drinks, etc.), add personal notes on both places and meals, and discover new spots.',
+    site: 'https://foodietrekker.com',
+    github: 'https://github.com/MrJonnyOrtiz/ginaZphoto-React',
+    description:
+      'Foodie Trekker is an intuitive and minimalist web application. Upon logging in, users can add new places to their list, record visit and meals details, and search for new restaurants and bars. The app also includes features like filtering by preferences (liked, disliked, favorite, wishlist), sorting places, and a Google Maps integration to visualize places.',
   },
 ];
 

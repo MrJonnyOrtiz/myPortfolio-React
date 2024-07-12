@@ -31,23 +31,23 @@ function Project({ projects }) {
             <source src={url} type="video/mp4" />
           </video>
         </div>
-        <p className="max-w-[32ch] sm:max-w-prose">
+        <p className="max-w-[32ch]  sm:max-w-prose">
           <span className="font-semibold">Need</span>: {problem}
         </p>
-        <p className="max-w-[32ch] sm:max-w-prose">
+        <p className="max-w-[32ch]  sm:max-w-prose">
           <span className="font-semibold">Solution</span>: {solution}
         </p>
-        <p className="max-w-[32ch] sm:max-w-prose">
+        <p className="max-w-[32ch]  sm:max-w-prose">
           <span className="font-semibold">Technologies</span>: {tech}
         </p>
-        <p className="max-w-[32ch] sm:max-w-prose">
+        <p className="max-w-[32ch]  sm:max-w-prose">
           <span className="font-semibold">Description</span>: {description}
         </p>
         {id !== 1 ? (
           <>
-            <p className="mx-auto max-w-[32ch] sm:max-w-prose">
+            <p className="mx-auto max-w-[32ch]  sm:max-w-prose">
               <a
-                className=" animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
+                className=" animate-pulse rounded-xl bg-[#ff914d] px-4  font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
                 href={site}
                 target="_blank"
                 rel="noreferrer"
@@ -55,7 +55,7 @@ function Project({ projects }) {
                 Website
               </a>
             </p>
-            <p className="mx-auto max-w-[32ch] sm:max-w-prose">
+            <p className="mx-auto max-w-[32ch]  sm:max-w-prose">
               <a
                 className="animate-pulse rounded-xl bg-[#ff914d] px-4 py-2 font-semibold text-[#0030ff] shadow-xl hover:animate-none hover:bg-white hover:text-black"
                 href={github}
@@ -67,7 +67,7 @@ function Project({ projects }) {
             </p>
           </>
         ) : (
-          <p className="text-center">
+          <p className="py-2 text-center">
             <Link to="/contact">
               <span className="rounded-xl bg-[#ff914d]/[.8] px-2 font-semibold hover:text-black">
                 Contact

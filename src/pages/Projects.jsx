@@ -21,16 +21,18 @@ function Projects({ projects }) {
             className="grid gap-8 rounded-xl border p-5 shadow-xl"
           >
             <Link to={`/projects/${project.id}`}>
-              <p className="text-center text-xl font-bold">{project.title}</p>
-              <p>
-                <span className="font-semibold">Need</span>: {project.problem}
+              <p className="py-2 text-center text-xl font-bold">
+                {project.title}
               </p>
-              <p>
-                <span className="font-semibold">Solution</span>:{' '}
+              <p className="py-2">
+                <span className=" font-semibold">Need</span>: {project.problem}
+              </p>
+              <p className="py-2">
+                <span className=" font-semibold">Solution</span>:{' '}
                 {project.solution}
               </p>
-              <p>
-                <span className="font-semibold">Technologies</span>:{' '}
+              <p className="py-2">
+                <span className=" font-semibold">Technologies</span>:{' '}
                 {project.tech}
               </p>
 
