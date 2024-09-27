@@ -4,10 +4,11 @@
 
 @layer base {
   body {
-    background: radial-gradient(#3359ff, #0030ff);
+    background: radial-gradient(circle, #a8e6cf, #dcedc1);
     width: 100%;
-    color: white;
-    letter-spacing: 0.2rem;
+    color: #333; /* Dark gray for a softer, friendlier feel */
+    letter-spacing: 0.05rem; /* Reduce letter spacing for better readability */
     margin: 0;
+    font-family: 'Arial', sans-serif; /* A clean, approachable font */
   }
 }

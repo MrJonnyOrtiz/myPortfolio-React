@@ -30,7 +30,16 @@ const blogs = [
 
 function Blogs() {
   useEffect(() => {
-    window.gtag('event', 'blogsPage');
+    try {
+      // Check if the user has given consent for analytics in localStorage
+      const isConsentGiven = localStorage.getItem('cookieConsent') === 'true';
+
+      if (isConsentGiven && window.gtag) {
+        window.gtag('event', 'blogsPage');
+      }
+    } catch (error) {
+      console.error('Analytics tracking error:', error);
+    }
   }, []);
 
   return (

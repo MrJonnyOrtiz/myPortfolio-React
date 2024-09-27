@@ -6,7 +6,7 @@ const menu = ['Projects', 'About', 'Contact', 'Blogs'];
 
 function AppLayout() {
   return (
-    <div className="m-3 grid h-dvh max-w-full grid-rows-[100px_1fr_80px] gap-8 p-5 sm:grid-cols-[200px_1fr] sm:grid-rows-[1fr_80px]">
+    <div className="m-3 grid min-h-screen max-w-full grid-rows-[100px_1fr_80px] gap-8 p-5 sm:grid-cols-[200px_1fr] sm:grid-rows-[1fr_80px]">
       <header className="">
         <Navbar menu={menu} />
         <Sidebar menu={menu} />

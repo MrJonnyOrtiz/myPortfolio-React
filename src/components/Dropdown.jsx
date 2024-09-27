@@ -1,16 +1,14 @@
-/* eslint-disable react/prop-types */
-
 import { Link } from 'react-router-dom';
 
 const DropdownMenu = ({ items, handleDropdownVisible }) => {
   return (
-    <div className="absolute -start-8 right-6 top-12 z-[1] ">
-      <ul className="grid w-[240%] gap-3 rounded-xl bg-[#ff914d]/[.8] py-3">
+    <div className="absolute -left-8 right-6 top-12 z-10">
+      <ul className="grid w-[240%] gap-3 rounded-lg bg-white/90 p-3 shadow-lg">
         {items.map((item) => (
           <li
             key={item}
-            className="mx-auto rounded-xl bg-[#0030ff]/[.8] px-3 py-1 font-semibold shadow-lg"
-            onClick={() => handleDropdownVisible((viz) => !viz)}
+            className="mx-auto w-full rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 transition duration-300 hover:bg-green-400"
+            onClick={() => handleDropdownVisible((visible) => !visible)}
           >
             <Link to={`/${item.toLowerCase()}`}>{item}</Link>
           </li>

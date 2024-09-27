@@ -1,26 +1,52 @@
-/* eslint-disable react/prop-types */
 import { useEffect } from 'react';
-
-import Bio from '../components/Bio';
-// import Carousel from '../components/Carousel';
+import { Link } from 'react-router-dom';
+import headshot from '../assets/headshot.smallerSize.webp';
 
 function Home() {
   useEffect(() => {
-    window.gtag('event', 'homePage');
+    try {
+      // Check if the user has given consent for analytics in localStorage
+      const isConsentGiven = localStorage.getItem('cookieConsent') === 'true';
+
+      if (isConsentGiven && window.gtag) {
+        window.gtag('event', 'homePage');
+      }
+    } catch (error) {
+      console.error('Analytics tracking error:', error);
+    }
   }, []);
 
   return (
-    <div className="grid gap-8 text-center">
-      <h1 className="text-3xl md:text-5xl lg:text-7xl">
-        Welcome to my portfolio!
-      </h1>
-      <Bio />
-      {/* <Carousel slides={projects} /> */}
-      <img
-        src="/fullStackVisual.png"
-        className="mx-auto hidden h-auto w-full rounded-xl sm:block sm:w-full md:w-3/4 lg:w-1/2"
-      />
-    </div>
+    <main
+      className="relative grid gap-8 bg-cover bg-center bg-no-repeat p-6 text-center"
+      style={{ backgroundImage: "url('/fullStackVisual.png')" }}
+    >
+      <div className="absolute inset-0 bg-white opacity-80"></div>
+      {/* Softer Overlay */}
+      <div className="relative z-10 flex flex-col gap-3 space-y-8">
+        <h1 className="text-3xl font-semibold text-gray-800 md:text-5xl lg:text-7xl">
+          Hello and Welcome!
+        </h1>
+        <img
+          src={headshot}
+          className="mx-auto h-auto w-1/3 rounded-full sm:hidden"
+          alt="Jonny Ortiz smiling headshot"
+        />
+        <p className="mx-auto max-w-2xl text-lg text-gray-700 md:text-xl lg:text-2xl">
+          I&apos;m Jonny, a Full Stack Developer passionate about building
+          user-friendly web apps that make life easier.
+        </p>
+        <p className="mx-auto max-w-2xl text-lg text-gray-700 md:text-xl lg:text-2xl">
+          A lifelong learner, I currently specialize in serverless React
+          applications on AWS.
+        </p>
+        <Link to="/projects">
+          <div className="inline-block rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400">
+            Explore My Latest Projects
+          </div>
+        </Link>
+      </div>
+    </main>
   );
 }
 

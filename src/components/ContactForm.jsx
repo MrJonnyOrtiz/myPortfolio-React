@@ -1,161 +1,151 @@
-/* eslint-disable react/prop-types */
-
 import { useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function ContactForm() {
-  const [success, setSuccess] = useState('');
-  const [error, setError] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [formStatus, setFormStatus] = useState({ success: '', error: '' });
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: '',
+  });
   const [hasCaptchaToken, setHasCaptchaToken] = useState(false);
-
-  // const SECRET_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; // testing
-  const SECRET_KEY = '6LcaoNkjAAAAAOFAEh-K5p62Rh3T1V_zzb9lJ1wK'; // prod
+  const [isSubmiting, setIsSubmiting] = useState(false);
 
   const captchaRef = useRef(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const SECRET_KEY = '6LcaoNkjAAAAAOFAEh-K5p62Rh3T1V_zzb9lJ1wK';
 
-    const formDataObj = Object.fromEntries(new FormData(e.target).entries());
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setFormStatus({ success: '', error: '' });
+  };
 
-    // data validation
+  const validateFormData = () => {
     const fullNameRegX =
       /([A-Z]+([']|[.])?([A-Z,a-z,.]*))\s(([A-Z]|['])+[A-Z,a-z]*)([-\s](([A-Z]|['])+[A-Z,a-z]*)*)?/g;
-    // /([A-Z]+([']|[\.])?([A-Z,a-z,\.]*))\s(([A-Z]|['])+[A-Z,a-z]*)([-\s](([A-Z]|['])+[A-Z,a-z]*)*)?/g;
-
     const emailVal = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    if (fullNameRegX.test(formDataObj.name)) {
-      if (formDataObj.email !== '' && emailVal.test(formDataObj.email)) {
-        if (formDataObj.message.length > 3) {
-          if (hasCaptchaToken) {
-            const token = captchaRef.current.getValue(); // returns token from ReCaptcha component
+    if (!fullNameRegX.test(formData.fullName)) {
+      setFormStatus({ error: 'Please enter a valid full name.' });
+      return false;
+    }
+    if (!emailVal.test(formData.email)) {
+      setFormStatus({ error: 'Please enter a valid email address.' });
+      return false;
+    }
+    if (formData.message.length <= 3) {
+      setFormStatus({ error: 'Please enter a valid message.' });
+      return false;
+    }
+    if (!hasCaptchaToken) {
+      setFormStatus({ error: 'Please check the reCAPTCHA box.' });
+      return false;
+    }
+    return true;
+  };
 
-            captchaRef.current.reset();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateFormData()) return;
+    setIsSubmiting(true);
 
-            const raw = JSON.stringify({
-              ...formDataObj,
-              'g-recaptcha-response': token,
-            });
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
 
-            const options = {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: raw,
-            };
+    const raw = JSON.stringify({ ...formData, 'g-recaptcha-response': token });
 
-            try {
-              const response = await fetch(
-                'https://ydvvjbdup4.execute-api.us-east-1.amazonaws.com/Prod',
-                options,
-              );
+    try {
+      const response = await fetch(
+        'https://ydvvjbdup4.execute-api.us-east-1.amazonaws.com/Prod',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: raw,
+        },
+      );
 
-              if (response.ok) {
-                // show success message
-                setSuccess('Your message was sent!');
-                setError('');
-
-                // reset form
-                setFullName('');
-                setEmail('');
-                setMessage('');
-                setHasCaptchaToken(false);
-
-                // const data = await response.json(); // the data is a message Id string, good for nothing
-              } else {
-                // show error message
-                setError(
-                  'Sorry, something went wrong trying to send your message. The administrator has been informed. Please try again at a later time.',
-                );
-                console.log(response);
-              }
-            } catch (error) {
-              setError(
-                'Sorry, something went wrong trying to send your message. The administrator has been informed. Please try again at a later time.',
-              );
-            }
-          } else {
-            // the recaptcha was not checked
-            setError('Please check the recaptcha box.');
-          }
-        } else {
-          setError('Please enter a valid message.');
-        }
+      if (response.ok) {
+        setFormStatus({ success: 'Your message was sent!' });
+        setFormData({ fullName: '', email: '', message: '' });
+        setHasCaptchaToken(false);
       } else {
-        setError('Please enter a valid email address.');
+        throw new Error('Failed to send the message');
       }
-    } else {
-      setError('Please enter a valid full name.');
+    } catch (error) {
+      setFormStatus({
+        error: 'Sorry, something went wrong. Please try again later.',
+      });
+    } finally {
+      setIsSubmiting(false);
     }
   };
 
-  function handleOnChange() {
+  const handleCaptchaChange = () => {
     setHasCaptchaToken(true);
-    setError('');
-  }
+    setFormStatus({ success: '', error: '' });
+  };
 
   return (
     <div className="text-center">
-      {/* <!-- Contact form --> */}
       <form
-        className="grid gap-8 rounded-xl border px-6 py-3 shadow-xl"
+        className="grid gap-6 rounded-lg bg-white/90 p-6 shadow-lg"
         id="contact-us-form"
         onSubmit={handleSubmit}
+        aria-label="Contact form"
       >
-        {/* feedback for user after submission */}
-        {success.length > 0 && (
-          <p className="text-lg font-bold text-black">{success}</p>
+        {formStatus.success && (
+          <p className="text-lg font-bold text-green-700">
+            {formStatus.success}
+          </p>
         )}
-        {error.length > 0 && (
-          <p className="animate-pulse text-lg font-bold text-black">{error}</p>
+        {formStatus.error && (
+          <p className="animate-pulse text-lg font-bold text-red-600">
+            {formStatus.error}
+          </p>
         )}
 
-        <label htmlFor="name">
-          <span className="block">Your Full Name</span>
+        <label htmlFor="fullName" className="block text-gray-800">
+          <span className="mb-2 block">Your Full Name</span>
           <input
             type="text"
-            className=" text-black"
-            id="name"
-            name="name"
-            placeholder=" Enter your full name"
+            className="w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-green-400 focus:ring-green-400"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
             autoComplete="name"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={formData.fullName}
+            onChange={handleInputChange}
           />
         </label>
 
-        <label htmlFor="email">
-          <span className="block">Your Email</span>
+        <label htmlFor="email" className="block text-gray-800">
+          <span className="mb-2 block">Your Email</span>
           <input
             type="email"
-            className="peer px-6 text-black"
+            className="w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-green-400 focus:ring-green-400"
             name="email"
             id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            autoComplete="email"
+            value={formData.email}
+            onChange={handleInputChange}
           />
-          <p id="emailHelp" className="text-xs italic">
+          <p id="emailHelp" className="mt-1 text-xs italic text-gray-600">
             I&apos;ll never share your email with anyone else.
-          </p>
-          <p className="invisible animate-pulse text-sm text-black peer-invalid:visible">
-            Please provide a valid email address.
           </p>
         </label>
 
-        <label htmlFor="message">
-          <span className="block">Your message</span>
+        <label htmlFor="message" className="block text-gray-800">
+          <span className="mb-2 block">Your Message</span>
           <textarea
-            className="px-6 text-black"
+            className="w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-green-400 focus:ring-green-400"
             id="message"
             name="message"
             rows="4"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Enter your message"
+            value={formData.message}
+            onChange={handleInputChange}
           ></textarea>
         </label>
 
@@ -163,22 +153,25 @@ export default function ContactForm() {
           <ReCAPTCHA
             sitekey={SECRET_KEY}
             ref={captchaRef}
-            onChange={handleOnChange}
+            onChange={handleCaptchaChange}
             size="compact"
           />
         </div>
 
-        <div className="">
-          <button
-            type="submit"
-            aria-label="Send Message"
-            id="submitBtn"
-            className="my-3 animate-pulse rounded-xl bg-[#ff914d] px-6 py-3 font-semibold text-[#0030ff] hover:bg-black hover:text-white"
-            hidden={!hasCaptchaToken ? 'hidden' : ''}
-          >
-            Send Message!
-          </button>
-        </div>
+        <button
+          type="submit"
+          aria-label="Send Message"
+          className={`w-full rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400 ${
+            !hasCaptchaToken ? 'cursor-not-allowed opacity-50' : ''
+          }`}
+          disabled={!hasCaptchaToken}
+        >
+          {isSubmiting ? (
+            <span className="font-extralight italic">Sending...</span>
+          ) : (
+            'Send Message!'
+          )}
+        </button>
       </form>
     </div>
   );
