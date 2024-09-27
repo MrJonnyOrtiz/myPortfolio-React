@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { blogs } from '../../data.js';
 import Card from '../components/Card';
+import ScrollToTop from '../components/ScrollToTop';
 
 function Blogs() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function Blogs() {
       >
         Client blogs
       </a>
+      <ScrollToTop />
     </div>
   );
 }

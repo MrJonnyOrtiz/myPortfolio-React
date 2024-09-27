@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import Card from '../components/Card';
+import ScrollToTop from '../components/ScrollToTop';
 
 import PropTypes from 'prop-types';
 
@@ -34,6 +35,7 @@ function Projects({ projects }) {
         ))}
       </ul>
       <p className="text-center text-xl text-gray-800">More to come!</p>
+      <ScrollToTop />
     </div>
   );
 }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import headshot from '../assets/headshot.smallerSize.webp';
 import { skills, education } from '../../data.js';
 
+import ScrollToTop from '../components/ScrollToTop';
+
 export default function About() {
   useEffect(() => {
     try {
@@ -127,6 +129,7 @@ export default function About() {
           </svg>
         </a>
       </div>
+      <ScrollToTop />
     </div>
   );
 }
