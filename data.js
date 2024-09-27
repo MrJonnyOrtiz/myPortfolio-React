@@ -98,3 +98,9 @@ export const blogs = [
     url: 'https://medium.com/@imj0nny0rt1z/general-javascript-coding-best-practices-800391d91c18',
   },
 ];
+
+export const funFacts = [
+  'Sure, loving Marvel movies might make me a nerd, but hey, who wouldn’t want to save the world... one movie marathon at a time?',
+  'Chocolate is proof that happiness can be eaten... one delicious bite at a time!',
+  'Chocolate chip cookies are like hugs for your taste buds – warm, sweet, and impossible to resist!',
+];
