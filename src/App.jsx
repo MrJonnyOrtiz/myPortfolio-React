@@ -7,6 +7,7 @@ import Project from './pages/Project';
 import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import ErrorPage from './pages/ErrorPage';
 import PageNotFound from './pages/PageNotFound';
 import { projects } from '../data.js';
 
@@ -17,15 +18,16 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="/home" />} />
-          <Route path="home" element={<Home />} />
-          <Route path="projects" element={<Projects projects={projects} />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/projects" element={<Projects projects={projects} />} />
           <Route
-            path="projects/:projectId"
+            path="/projects/:projectId"
             element={<Project projects={projects} />}
           />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/error" element={<ErrorPage />} />
         </Route>
         {/* Handle 404s */}
         <Route path="*" element={<PageNotFound />} />

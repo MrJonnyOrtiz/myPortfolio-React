@@ -61,7 +61,6 @@ function Card({ page, data }) {
             className="mx-auto w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
           >
             Read more
-            <span className="text-base">→</span>
           </Link>
         ) : (
           <a
@@ -71,7 +70,6 @@ function Card({ page, data }) {
             className="mx-auto w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
           >
             Read more
-            <span className="text-base">→</span>
           </a>
         )}
       </div>
