@@ -16,6 +16,11 @@ function Blogs() {
     }
   }, []);
 
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="grid gap-8 p-4 text-center">
       <h2 className="text-3xl font-bold text-gray-800 md:text-5xl lg:text-7xl">

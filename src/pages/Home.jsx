@@ -16,6 +16,11 @@ function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main
       className="relative grid gap-8 bg-cover bg-center bg-no-repeat p-6 text-center"
