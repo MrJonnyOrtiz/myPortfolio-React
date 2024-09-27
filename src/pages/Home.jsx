@@ -19,7 +19,7 @@ function Home() {
   return (
     <main
       className="relative grid gap-8 bg-cover bg-center bg-no-repeat p-6 text-center"
-      style={{ backgroundImage: "url('/fullStackVisual.png')" }}
+      style={{ backgroundImage: "url('/fullStackVisual.webp')" }}
     >
       <div className="absolute inset-0 bg-white opacity-80"></div>
       {/* Softer Overlay */}
