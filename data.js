@@ -100,7 +100,9 @@ export const blogs = [
 ];
 
 export const funFacts = [
-  'Sure, loving Marvel movies might make me a nerd, but hey, who wouldn’t want to save the world... one movie marathon at a time?',
+  'Sure, loving superhero movies might make me a nerd, but who wouldn’t want to save the world... one movie marathon at a time?',
   'Chocolate is proof that happiness can be eaten... one delicious bite at a time!',
   'Chocolate chip cookies are like hugs for your taste buds – warm, sweet, and impossible to resist!',
+  'I’m not a fan of cold weather—if it’s below room temperature, count me out!',
+  'I love sports – whether I’m cheering from the couch or pretending I’m a pro on the field!',
 ];
