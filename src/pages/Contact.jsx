@@ -11,8 +11,7 @@ function Contact() {
         // Load Google Analytics script if consent is given
         if (!window.gtag) {
           const script = document.createElement('script');
-          script.src =
-            'https://www.googletagmanager.com/gtag/js?id=G-CHEZE0LXQD&cookie_flags=samesite=None;secure';
+          script.src = import.meta.env.VITE_GTAG_SRC_URL;
           script.async = true;
           document.head.appendChild(script);
 
@@ -23,7 +22,7 @@ function Contact() {
             }
             window.gtag = gtag;
             gtag('js', new Date());
-            gtag('config', 'G-4WYSFWXR1N');
+            gtag('config', import.meta.env.VITE_GTAG);
             gtag('event', 'contactPage'); // Track the contact page event
           };
         } else {

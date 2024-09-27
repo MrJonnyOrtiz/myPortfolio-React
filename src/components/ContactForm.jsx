@@ -9,11 +9,11 @@ export default function ContactForm() {
     message: '',
   });
   const [hasCaptchaToken, setHasCaptchaToken] = useState(false);
-  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const captchaRef = useRef(null);
 
-  const SECRET_KEY = '6LcaoNkjAAAAAOFAEh-K5p62Rh3T1V_zzb9lJ1wK';
+  const SECRET_KEY = import.meta.env.VITE_RECAPTCHA_KEY;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +48,7 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateFormData()) return;
-    setIsSubmiting(true);
+    setIsSubmitting(true);
 
     const token = captchaRef.current.getValue();
     captchaRef.current.reset();
@@ -56,14 +56,11 @@ export default function ContactForm() {
     const raw = JSON.stringify({ ...formData, 'g-recaptcha-response': token });
 
     try {
-      const response = await fetch(
-        'https://ydvvjbdup4.execute-api.us-east-1.amazonaws.com/Prod',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: raw,
-        },
-      );
+      const response = await fetch(import.meta.env.VITE_CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: raw,
+      });
 
       if (response.ok) {
         setFormStatus({ success: 'Your message was sent!' });
@@ -77,7 +74,7 @@ export default function ContactForm() {
         error: 'Sorry, something went wrong. Please try again later.',
       });
     } finally {
-      setIsSubmiting(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -94,17 +91,6 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         aria-label="Contact form"
       >
-        {formStatus.success && (
-          <p className="text-lg font-bold text-green-700">
-            {formStatus.success}
-          </p>
-        )}
-        {formStatus.error && (
-          <p className="animate-pulse text-lg font-bold text-red-600">
-            {formStatus.error}
-          </p>
-        )}
-
         <label htmlFor="fullName" className="block text-gray-800">
           <span className="mb-2 block">Your Full Name</span>
           <input
@@ -166,12 +152,22 @@ export default function ContactForm() {
           }`}
           disabled={!hasCaptchaToken}
         >
-          {isSubmiting ? (
+          {isSubmitting ? (
             <span className="font-extralight italic">Sending...</span>
           ) : (
             'Send Message!'
           )}
         </button>
+        {formStatus.success && (
+          <p className="text-lg font-bold text-green-700">
+            {formStatus.success}
+          </p>
+        )}
+        {formStatus.error && (
+          <p className="animate-pulse text-lg font-bold text-red-600">
+            {formStatus.error}
+          </p>
+        )}
       </form>
     </div>
   );

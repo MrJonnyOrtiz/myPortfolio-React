@@ -31,7 +31,9 @@ export default function CookieConsentBanner() {
 
   const loadGoogleAnalytics = () => {
     const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-CHEZE0LXQD';
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${
+      import.meta.env.VITE_GA
+    }`;
     script.async = true;
     document.head.appendChild(script);
 
@@ -41,7 +43,7 @@ export default function CookieConsentBanner() {
         window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', 'G-4WYSFWXR1N');
+      gtag('config', import.meta.env.VITE_GTAG);
     };
   };
 
