@@ -85,11 +85,12 @@ function Home() {
           </Link>
         </div>
       </main>
+
       {/* Easter Egg Element */}
       {!easterEggFound && (
         <div
           onClick={handleEasterEggClick}
-          className="animate-bounce-custom cursor-pointer p-3 text-right text-3xl"
+          className="animate-bounce-custom m-10 cursor-pointer text-right text-3xl"
         >
           🥚
         </div>
