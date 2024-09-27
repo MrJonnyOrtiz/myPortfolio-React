@@ -3,7 +3,7 @@ import headshot from '../assets/headshot.smallerSize.webp';
 import reactLogo from '../assets/react.svg';
 import awsLogo from '../assets/amazonaws.svg';
 
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 
 function Sidebar({ menu }) {
   return (
@@ -80,3 +80,7 @@ function Sidebar({ menu }) {
 }
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+  menu: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

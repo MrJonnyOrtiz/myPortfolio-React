@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import PropTypes from 'prop-types';
 
 function Projects({ projects }) {
   useEffect(() => {
@@ -65,3 +65,7 @@ function Projects({ projects }) {
 }
 
 export default Projects;
+
+Projects.propTypes = {
+  projects: PropTypes.array.isRequired,
+};

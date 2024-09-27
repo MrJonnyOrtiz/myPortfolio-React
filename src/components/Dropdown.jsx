@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 const DropdownMenu = ({ items, handleDropdownVisible }) => {
   return (
     <div className="absolute -left-8 right-6 top-12 z-10">
@@ -19,3 +21,8 @@ const DropdownMenu = ({ items, handleDropdownVisible }) => {
 };
 
 export default DropdownMenu;
+
+DropdownMenu.propTypes = {
+  items: PropTypes.array.isRequired,
+  handleDropdownVisible: PropTypes.func.isRequired,
+};

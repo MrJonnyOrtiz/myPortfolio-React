@@ -51,3 +51,47 @@ export const projects = [
       'Foodie Trekker is an intuitive and minimalist web application. Upon logging in, users can add new places to their list, record visit and meals details, and search for new restaurants and bars. The app also includes features like filtering by preferences (liked, disliked, favorite, wishlist), sorting places, and a Google Maps integration to visualize places.',
   },
 ];
+
+export const menu = ['Projects', 'About', 'Contact', 'Blogs'];
+
+export const skills = [
+  {
+    technologies:
+      'HTML5, CSS3, Javascript (ES6+), React.js, Rails (exploring), AWS',
+  },
+  { tools: 'Git, Docker, Kanban, Business Process Modeling and Notation' },
+  { practices: 'Responsive design, RESTful API design, CI/CD pipeline' },
+];
+
+export const education = [
+  'B.S. Computer Science, State University of New York, New Paltz',
+  'Software Engineering, State College of Florida powered by Flatiron School',
+];
+
+export const blogs = [
+  {
+    title: 'React & Rails Project Planning Process',
+    description:
+      'Ready to show off your React & Rails skills on a new project and wondering (while trying not to hyperventilate) where to begin? You’ve come to the right place...',
+    published: 'Aug 2 2022',
+    length: '4 min read',
+    link: 'https://medium.com/@imj0nny0rt1z/react-rails-project-planning-process-711839a94b20',
+  },
+  {
+    title: 'React-ed',
+    description:
+      'Or the wordier title I didn’t use: A Condensed Education on React. In this article, I’ll explain what React is and isn’t...',
+    published: 'May 28, 2022',
+    length: '3 min read',
+    link: 'https://medium.com/@imj0nny0rt1z/react-ed-8b2248c8b807',
+  },
+
+  {
+    title: 'General Javascript Coding Best Practices',
+    description:
+      '“Luke, trust me” — the final words from Obi Wan before Luke Skywalker successfully destroys the Death Star in Star Wars, A New Hope. Why am I reciting these words...',
+    published: 'Apr 26, 2022',
+    length: '5 min read',
+    link: 'https://medium.com/@imj0nny0rt1z/general-javascript-coding-best-practices-800391d91c18',
+  },
+];

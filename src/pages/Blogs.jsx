@@ -1,32 +1,5 @@
 import { useEffect } from 'react';
-
-const blogs = [
-  {
-    title: 'React & Rails Project Planning Process',
-    description:
-      'Ready to show off your React & Rails skills on a new project and wondering (while trying not to hyperventilate) where to begin? You’ve come to the right place...',
-    published: 'Aug 2 2022',
-    length: '4 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/react-rails-project-planning-process-711839a94b20',
-  },
-  {
-    title: 'React-ed',
-    description:
-      'Or the wordier title I didn’t use: A Condensed Education on React. In this article, I’ll explain what React is and isn’t...',
-    published: 'May 28, 2022',
-    length: '3 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/react-ed-8b2248c8b807',
-  },
-
-  {
-    title: 'General Javascript Coding Best Practices',
-    description:
-      '“Luke, trust me” — the final words from Obi Wan before Luke Skywalker successfully destroys the Death Star in Star Wars, A New Hope. Why am I reciting these words...',
-    published: 'Apr 26, 2022',
-    length: '5 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/general-javascript-coding-best-practices-800391d91c18',
-  },
-];
+import { blogs } from '../../data.js';
 
 function Blogs() {
   useEffect(() => {
@@ -63,7 +36,7 @@ function Blogs() {
         href="https://www.sarasotaremodeling.com/blog"
         target="_blank"
         rel="noreferrer"
-        className="mx-auto my-3 w-fit animate-pulse rounded-xl bg-[#ff914d] px-6 py-3 font-semibold text-[#0030ff] hover:animate-none hover:bg-white hover:text-black"
+        className="mx-auto inline-block w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
       >
         More articles for a client
       </a>

@@ -8,7 +8,7 @@ import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import PageNotFound from './pages/PageNotFound';
-import { projects } from '../ProjectsData.js';
+import { projects } from '../data.js';
 
 function App() {
   return (
