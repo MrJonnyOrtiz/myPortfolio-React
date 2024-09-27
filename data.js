@@ -70,28 +70,31 @@ export const education = [
 
 export const blogs = [
   {
+    id: 1,
     title: 'React & Rails Project Planning Process',
     description:
       'Ready to show off your React & Rails skills on a new project and wondering (while trying not to hyperventilate) where to begin? You’ve come to the right place...',
     published: 'Aug 2 2022',
     length: '4 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/react-rails-project-planning-process-711839a94b20',
+    url: 'https://medium.com/@imj0nny0rt1z/react-rails-project-planning-process-711839a94b20',
   },
   {
+    id: 2,
     title: 'React-ed',
     description:
       'Or the wordier title I didn’t use: A Condensed Education on React. In this article, I’ll explain what React is and isn’t...',
     published: 'May 28, 2022',
     length: '3 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/react-ed-8b2248c8b807',
+    url: 'https://medium.com/@imj0nny0rt1z/react-ed-8b2248c8b807',
   },
 
   {
+    id: 3,
     title: 'General Javascript Coding Best Practices',
     description:
       '“Luke, trust me” — the final words from Obi Wan before Luke Skywalker successfully destroys the Death Star in Star Wars, A New Hope. Why am I reciting these words...',
     published: 'Apr 26, 2022',
     length: '5 min read',
-    link: 'https://medium.com/@imj0nny0rt1z/general-javascript-coding-best-practices-800391d91c18',
+    url: 'https://medium.com/@imj0nny0rt1z/general-javascript-coding-best-practices-800391d91c18',
   },
 ];

@@ -40,10 +40,11 @@ function Home() {
           A lifelong learner, I currently specialize in serverless React
           applications on AWS.
         </p>
-        <Link to="/projects">
-          <div className="inline-block rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400">
-            Explore My Latest Projects
-          </div>
+        <Link
+          to="/projects"
+          className="mx-auto w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+        >
+          Explore My Latest Projects
         </Link>
       </div>
     </main>
