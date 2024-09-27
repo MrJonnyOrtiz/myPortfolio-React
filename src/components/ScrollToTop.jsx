@@ -33,7 +33,7 @@ function ScrollToTop() {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 rounded-full bg-gray-500 px-3 py-1 text-white shadow-md transition duration-300 hover:bg-gray-600 sm:hidden"
+        className="fixed bottom-8 right-8 z-50 rounded-full bg-gray-500 px-3 py-1 text-white shadow-md transition duration-300 hover:bg-gray-600"
         aria-label="Scroll to top"
       >
         ^
