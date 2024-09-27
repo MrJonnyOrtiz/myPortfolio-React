@@ -12,7 +12,7 @@ function Navbar({ menu }) {
   };
 
   return (
-    <nav className="flex items-center justify-between rounded-lg bg-white/70 p-4 shadow-lg sm:hidden">
+    <nav className="z-50 flex items-center justify-between rounded-lg bg-white/70 p-4 shadow-lg sm:hidden">
       <Link to="/home" aria-label="Go to Home">
         <h1 className="text-xl font-bold text-gray-800">Jonny Ortiz</h1>
       </Link>
