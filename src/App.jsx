@@ -8,6 +8,7 @@ import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import PageNotFound from './pages/PageNotFound';
 import { projects } from '../data.js';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/error" element={<ErrorPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
         {/* Handle 404s */}
         <Route path="*" element={<PageNotFound />} />
