@@ -25,7 +25,7 @@ function Blogs() {
   return (
     <div className="grid gap-8 p-4 text-center">
       <h2 className="text-3xl font-bold text-gray-800 md:text-5xl lg:text-7xl">
-        Blog posts
+        Insights & Inspiration
       </h2>
       <ul className="my-5 grid gap-8 lg:grid-cols-2">
         {blogs.map((blog) => (

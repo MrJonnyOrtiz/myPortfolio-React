@@ -4,7 +4,8 @@ export const projects = [
     url: '/TheWildOasisBookingFeature.mp4',
     title: 'Self study Booking App',
     tech: 'React, Styled Components, React Router, React icons, React Query, React Hot Toast, React Hook Form, reCharts, React Error Boundary, AWS (Elastic Beanstalk)',
-    problem: 'Manage hotel bookings',
+    problem:
+      'An online tool to manage hotel bookings, enhancing UI/UX for seamless reservations, and streamlining the booking process.',
     solution: 'Intuitive and modern web-based cabin management system.',
     site: 'http://thewildoasis-dev.us-east-1.elasticbeanstalk.com/dashboard',
     github: 'https://github.com/MrJonnyOrtiz/TheWildOasis',
@@ -16,7 +17,8 @@ export const projects = [
     url: '/SRDdemo202312.mp4',
     title: 'Sarasota Remodeling Web App',
     tech: 'React, React Router, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SES, Route53, DynamoDB), Google ReCaptcha, Google Analytics',
-    problem: "Modernize Client's website",
+    problem:
+      "Transform the client's website to enhance user interaction, boost customer engagement, improve SEO performance, and drive higher conversion rates for greater business impact.",
     solution:
       "Modern, responsive web app showcasing Client's work, blog posts, and reviews.",
     site: 'https://sarasotaremodeling.com',
@@ -29,12 +31,14 @@ export const projects = [
     url: '/ginaZphotoVideo202312.mp4',
     title: 'Gina Z Photography Website',
     tech: 'React, Tailwind CSS, AWS (CloudFormation, S3, CloudFront, API Gateway, ACM, Lambda, SES, Route53), Google ReCaptcha',
-    problem: 'Create Client website',
-    solution: "Modern, responsive website showcasing Client's work.",
+    problem:
+      "An interactive website to showcase the client's photography, enhancing the user experience, attracting new customers, and expanding their reach.",
+    solution:
+      "Modern, responsive web app showcasing Client's work with contact functionality.",
     site: 'https://ginazphoto.com',
     github: 'https://github.com/MrJonnyOrtiz/ginaZphoto-React',
     description:
-      'This client needed to showcase their photography work. I created a modern, responsive website that featured their photography in an elegant carousel as well as a contact form for visitors. I created a CI/CD pipeline using Github Actions to continuously deploy new photography content as I add it.',
+      'This client needed to showcase their photography work. I created a modern, responsive web app that featured their photography in an elegant carousel as well as a contact form for visitors. I created a CI/CD pipeline using Github Actions to continuously deploy new photography content as I add it.',
   },
   {
     id: 4,

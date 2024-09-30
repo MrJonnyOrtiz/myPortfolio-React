@@ -42,31 +42,34 @@ export default function PrivacyPolicy() {
       </h2>
       <p className="mb-4">
         To enhance your experience on our website and to improve its
-        performance, we use Google Analytics. This help us understand how
-        visitors interact with our site and provide insights that allow us to
+        performance, we use Google Analytics. This tool helps us understand how
+        visitors interact with our site and provides insights that allow us to
         enhance the website&apos;s usability and content.
-      </p>
-      <h3 className="mb-2 text-xl font-semibold">Google Tag Manager (GTM)</h3>
-      <p className="mb-4">
-        GTM is a tag management system that enables us to quickly and easily
-        update tags and code snippets on our website. This helps us manage
-        analytics and marketing tags without modifying the site&apos;s code. GTM
-        does not collect personal data but facilitates the deployment of other
-        scripts, including Google Analytics.
       </p>
       <h3 className="mb-2 text-xl font-semibold">Google Analytics (GA)</h3>
       <p className="mb-4">
-        GA is a web analytics service that tracks and reports website traffic.
-        It uses cookies to collect anonymous data about your use of our website,
-        including the pages you visit, the time spent on each page, and the
-        interactions you have with site elements. This data helps us understand
-        user behavior, measure the effectiveness of our content, and make
-        informed decisions to enhance the user experience.
+        Google Analytics is a web analytics service that tracks and reports
+        website traffic. It uses cookies to collect anonymous data about your
+        use of our website, including the pages you visit, the time spent on
+        each page, and the interactions you have with site elements. This data
+        helps us understand user behavior, measure the effectiveness of our
+        content, and make informed decisions to enhance the user experience.
       </p>
 
       <h2 className="mb-2 text-2xl font-semibold">
-        3. What Data Is Collected by Google Analytics?
+        3. How We Use Google reCAPTCHA
       </h2>
+      <p className="mb-4">
+        To protect our website from spam and abuse, we use Google reCAPTCHA.
+        This helps us distinguish between human users and automated access
+        attempts. The use of reCAPTCHA is subject to the Google Privacy Policy
+        and Terms of Service. It collects information such as user interactions
+        with our website, IP addresses, and browser details to perform this
+        function.
+      </p>
+
+      <h2 className="mb-2 text-2xl font-semibold">4. What Data Is Collected</h2>
+      <h3 className="mb-2 text-xl font-semibold">Google Analytics</h3>
       <p className="mb-4">
         The information collected by Google Analytics includes, but is not
         limited to:
@@ -79,21 +82,40 @@ export default function PrivacyPolicy() {
         <li>User interactions with the website (e.g., clicks, scrolling)</li>
       </ul>
 
+      <h3 className="mb-2 text-xl font-semibold">Google reCAPTCHA</h3>
+      <p className="mb-4">
+        Google reCAPTCHA collects information to differentiate between human
+        users and bots. This includes but is not limited to:
+      </p>
+      <ul className="mb-4 list-inside list-disc">
+        <li>
+          User interactions with the website (e.g., mouse movements, key
+          presses)
+        </li>
+        <li>Anonymized IP addresses</li>
+        <li>Browser and device information</li>
+      </ul>
+
       <h2 className="mb-2 text-2xl font-semibold">
-        4. How We Use Collected Data
+        5. How We Use Collected Data
       </h2>
       <p className="mb-4">
-        The information we collect via Google Analytics is used to:
+        The information we collect via Google Analytics and reCAPTCHA is used
+        to:
       </p>
       <ul className="mb-4 list-inside list-disc">
         <li>Understand how users navigate and interact with our website.</li>
         <li>Improve website functionality, content, and user experience.</li>
         <li>Analyze website performance and identify areas for enhancement.</li>
         <li>Monitor trends in website traffic and user behavior.</li>
+        <li>
+          Protect the website from spam and malicious activity using Google
+          reCAPTCHA.
+        </li>
       </ul>
 
       <h2 className="mb-2 text-2xl font-semibold">
-        5. Your Control Over Data Collection
+        6. Your Control Over Data Collection
       </h2>
       <p className="mb-4">
         Your privacy is important to us. We give you the choice to accept or
@@ -105,10 +127,10 @@ export default function PrivacyPolicy() {
       <p className="mb-4">
         You may also choose to disable cookies in your browser settings.
         However, please note that this may affect the functionality of our
-        website.
+        website, including Google Analytics and Google reCAPTCHA.
       </p>
 
-      <h2 className="mb-2 text-2xl font-semibold">6. Sharing of Information</h2>
+      <h2 className="mb-2 text-2xl font-semibold">7. Sharing of Information</h2>
       <p className="mb-4">
         We do not sell, trade, or rent your personal information to others. We
         use the data collected by Google Analytics solely to understand website
@@ -117,7 +139,7 @@ export default function PrivacyPolicy() {
         information in accordance with its own privacy policy.
       </p>
 
-      <h2 className="mb-2 text-2xl font-semibold">7. Data Security</h2>
+      <h2 className="mb-2 text-2xl font-semibold">8. Data Security</h2>
       <p className="mb-4">
         We implement appropriate security measures to protect your information
         from unauthorized access, alteration, disclosure, or destruction. While
@@ -125,7 +147,7 @@ export default function PrivacyPolicy() {
         commercially acceptable means to protect your data.
       </p>
 
-      <h2 className="mb-2 text-2xl font-semibold">8. Your Privacy Rights</h2>
+      <h2 className="mb-2 text-2xl font-semibold">9. Your Privacy Rights</h2>
       <p className="mb-4">You have the right to:</p>
       <ul className="mb-4 list-inside list-disc">
         <li>
@@ -135,22 +157,10 @@ export default function PrivacyPolicy() {
           Withdraw your consent for data processing at any time by adjusting
           your cookie settings or using our cookie consent banner.
         </li>
-        {/* <li>
-               Opt-out of Google Analytics tracking by installing the{" "}
-               <a
-                  href="https://tools.google.com/dlpage/gaoptout"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-               >
-                  Google Analytics Opt-out Browser Add-on
-               </a>
-               .
-            </li> */}
       </ul>
 
       <h2 className="mb-2 text-2xl font-semibold">
-        9. Changes to This Privacy Policy
+        10. Changes to This Privacy Policy
       </h2>
       <p className="mb-4">
         We may update this Privacy Policy periodically to reflect changes in our
@@ -160,10 +170,10 @@ export default function PrivacyPolicy() {
         informed about how we protect your information.
       </p>
 
-      <h2 className="mb-2 text-2xl font-semibold">10. Contact Us</h2>
+      <h2 className="mb-2 text-2xl font-semibold">11. Contact Us</h2>
       <p className="mb-4">
-        If you have any questions or concerns about this Privacy Policy or our
-        use of Google Analytics, please contact us at:
+        If you have any questions or concerns about this Privacy Policy, our use
+        of Google Analytics, or Google reCAPTCHA, please contact us at:
       </p>
       <p className="mb-4">
         Jonny Ortiz
