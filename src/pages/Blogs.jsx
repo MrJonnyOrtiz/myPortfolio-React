@@ -36,7 +36,18 @@ function Blogs() {
         href="https://www.sarasotaremodeling.com/blog"
         target="_blank"
         rel="noreferrer"
-        className="mx-auto inline-block w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+        className="mx-auto inline-block w-fit rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
+        aria-label="Visit Client's blog for more articles"
+        title="Visit Client's blog for more articles"
+        onClick={() => {
+          try {
+            if (window.fathom) {
+              window.fathom.trackEvent('BLOGS_CLIENT_BLOGS');
+            }
+          } catch (error) {
+            console.error('Analytics tracking error:', error);
+          }
+        }}
       >
         Client blogs
       </a>

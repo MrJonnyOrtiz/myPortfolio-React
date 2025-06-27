@@ -85,6 +85,25 @@ function Project({ projects }) {
               target="_blank"
               rel="noreferrer"
               aria-label={`Visit the website for ${title}`}
+              title={`Visit the website for ${title}`}
+              onClick={() => {
+                try {
+                  if (window.fathom) {
+                    window.fathom.trackEvent(
+                      `PROJECTS_WEBSITE_${title
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    );
+                    console.log(
+                      `Fathom Event Tracked: PROJECTS_WEBSITE_${title
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    );
+                  }
+                } catch (error) {
+                  console.error('Analytics tracking error:', error);
+                }
+              }}
             >
               Website
             </a>
@@ -96,16 +115,56 @@ function Project({ projects }) {
               target="_blank"
               rel="noreferrer"
               aria-label={`View the GitHub repository for ${title}`}
+              title={`View the GitHub repository for ${title}`}
+              onClick={() => {
+                try {
+                  if (window.fathom) {
+                    window.fathom.trackEvent(
+                      `PROJECTS_GITHUB_${title
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    );
+                    console.log(
+                      `Fathom Event Tracked: PROJECTS_GITHUB_${title
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    );
+                  }
+                } catch (error) {
+                  console.error('Analytics tracking error:', error);
+                }
+              }}
             >
               GitHub
             </a>
           )}
           {id === 1 && (
             <p className="text-center">
-              <Link to="/contact">
-                <span className="inline-block rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600">
-                  Contact
-                </span>
+              <Link
+                to="/contact"
+                className="inline-block rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
+                aria-label={`Contact me for more information about ${title}`}
+                title={`Contact me for more information about ${title}`}
+                onClick={() => {
+                  try {
+                    if (window.fathom) {
+                      window.fathom.trackEvent(
+                        `PROJECTS_CONTACT_${title
+                          .replace(/[^a-zA-Z0-9]/g, '')
+                          .toUpperCase()}`,
+                      );
+                      console.log(
+                        `Fathom Event Tracked: PROJECTS_CONTACT_${title
+                          .replace(/[^a-zA-Z0-9_]/g, '')
+                          .toUpperCase()}`,
+                      );
+                    }
+                  } catch (error) {
+                    console.error('Analytics tracking error:', error);
+                  }
+                }}
+              >
+                <span>Contact</span>
               </Link>
               &nbsp;me for more information!
             </p>

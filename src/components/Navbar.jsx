@@ -13,14 +13,14 @@ function Navbar({ menu }) {
 
   return (
     <nav className="z-50 flex items-center justify-between rounded-lg bg-white/70 p-4 shadow-lg sm:hidden">
-      <Link to="/home" aria-label="Go to Home">
+      <Link to="/home" aria-label="Go to Home" title="Go to Home">
         <h1 className="text-xl font-bold text-gray-800">Jonny Ortiz</h1>
       </Link>
       <div className="relative">
         <button
           aria-label={isDropdownVisible ? 'Close menu' : 'Open menu'}
           onClick={toggleDropdown}
-          className="rounded-lg bg-green-300 p-2 text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+          className="rounded-lg bg-blue-500 p-2 text-white shadow-md transition duration-300 hover:bg-blue-600"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

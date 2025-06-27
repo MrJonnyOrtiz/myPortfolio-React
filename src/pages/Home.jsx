@@ -38,17 +38,27 @@ function Home() {
             onClick={handleEasterEggClick}
             aria-label="Click for a fun fact"
           />
-          <p className="animate-fade-in mx-auto max-w-2xl text-lg text-gray-700 md:text-xl lg:text-2xl">
+          <p className="mx-auto max-w-2xl animate-fade-in text-lg text-gray-700 md:text-xl lg:text-2xl">
             I&apos;m Jonny, a Full Stack Developer passionate about building
             user-friendly web apps that make life easier.
           </p>
-          <p className="animate-fade-in mx-auto max-w-2xl text-lg text-gray-700 delay-200 md:text-xl lg:text-2xl">
+          <p className="mx-auto max-w-2xl animate-fade-in text-lg text-gray-700 delay-200 md:text-xl lg:text-2xl">
             A lifelong learner, I currently specialize in serverless React
             applications on AWS.
           </p>
           <Link
             to="/projects"
-            className="animate-bounce-custom mx-auto w-fit transform rounded-full bg-blue-500 px-6 py-3 font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl"
+            className="mx-auto w-fit transform animate-bounce-custom rounded-full bg-blue-500 px-6 py-3 font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl"
+            aria-label="Explore my latest projects"
+            title="Explore my latest projects"
+            onClick={() => {
+              if (window.fathom) {
+                window.fathom.trackEvent('HOME_EXPLORE_PROJECTS_CLICK');
+                console.log(
+                  'Fathom Event Tracked: HOME_EXPLORE_PROJECTS_CLICK',
+                );
+              }
+            }}
           >
             Explore My Latest Projects
           </Link>
@@ -58,11 +68,11 @@ function Home() {
       {/* Easter Egg Element */}
       {easterEggFound && (
         <div
-          className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex animate-fade-in items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
           onClick={handleCloseClick} // Close when clicking outside modal
         >
           <div
-            className="animate-zoom-in relative mx-4 max-w-sm scale-95 transform rounded-lg bg-white p-8 text-center shadow-2xl transition-transform duration-300"
+            className="relative mx-4 max-w-sm scale-95 transform animate-zoom-in rounded-lg bg-white p-8 text-center shadow-2xl transition-transform duration-300"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             <button

@@ -5,6 +5,28 @@ function Card({ page, data }) {
   // Determine the link target
   const linkTarget = page === 'projects' ? `/${page}/${data.id}` : data.url;
 
+  const handleTrackClick = () => {
+    if (window.fathom) {
+      // Check if Fathom is loaded
+      let eventCode = '';
+      if (page === 'projects') {
+        // Example: PROJECT_VIEW_MyProjectTitle
+        eventCode = `PROJECT_VIEW_${data.title
+          .replace(/[^a-zA-Z0-9_]/g, '')
+          .toUpperCase()}`;
+      } else if (page === 'blogs') {
+        // Example: BLOG_READ_MyBlogTitle
+        eventCode = `BLOG_READ_${data.title
+          .replace(/[^a-zA-Z0-9_]/g, '')
+          .toUpperCase()}`;
+      }
+      if (eventCode) {
+        window.fathom.trackEvent(eventCode);
+        console.log(`Fathom Event Tracked: ${eventCode}`); // For debugging
+      }
+    }
+  };
+
   return (
     <li
       key={data.id}
@@ -59,6 +81,9 @@ function Card({ page, data }) {
           <Link
             to={linkTarget}
             className="mx-auto w-fit rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
+            aria-label={`View details for ${data.title}`}
+            title={`View details for ${data.title}`}
+            onClick={handleTrackClick}
           >
             Read more
           </Link>
@@ -68,6 +93,9 @@ function Card({ page, data }) {
             target="_blank"
             rel="noreferrer"
             className="mx-auto w-fit rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
+            aria-label={`Read more about ${data.title}`}
+            title={`Read more about ${data.title}`}
+            onClick={handleTrackClick}
           >
             Read more
           </a>

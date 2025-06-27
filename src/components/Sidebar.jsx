@@ -26,7 +26,6 @@ function Sidebar({ menu }) {
           to="/"
           aria-label="Go to Home"
           className="transition-colors duration-200 hover:text-blue-600 hover:underline"
-          // className="my-3 flex flex-col gap-3 "
         >
           Jonny Ortiz
         </Link>
@@ -63,6 +62,22 @@ function Sidebar({ menu }) {
               <Link
                 to={`/${item.toLowerCase()}`}
                 className="mx-auto block w-[75%] rounded-full bg-blue-500 p-3 text-white shadow-lg transition duration-300 hover:bg-white hover:text-blue-600"
+                aria-label={`Go to ${item}`}
+                title={`Go to ${item}`}
+                onClick={() => {
+                  if (window.fathom) {
+                    window.fathom.trackEvent(
+                      `SIDEBAR_NAV_${item
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    );
+                    console.log(
+                      `Fathom Event Tracked: SIDEBAR_NAV_${item
+                        .replace(/[^a-zA-Z0-9_]/g, '')
+                        .toUpperCase()}`,
+                    ); // For debugging
+                  }
+                }}
               >
                 {item}
               </Link>
@@ -76,6 +91,14 @@ function Sidebar({ menu }) {
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn Profile"
+          title="LinkedIn Profile"
+          onClick={() => {
+            if (window.fathom) {
+              window.fathom.trackEvent('SIDEBAR_LINKEDIN_CLICK');
+              console.log('Fathom Event Tracked: SIDEBAR_LINKEDIN_CLICK'); // For debugging
+            }
+          }}
+          className="transition duration-300 hover:scale-110"
         >
           <svg
             role="img"
@@ -90,17 +113,18 @@ function Sidebar({ menu }) {
       </div>
       {easterEggFound && (
         <div
-          className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex animate-fade-in items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
           onClick={handleCloseClick} // Close when clicking outside modal
         >
           <div
-            className="animate-zoom-in relative mx-4 max-w-sm scale-95 transform rounded-lg bg-white p-8 text-center shadow-2xl transition-transform duration-300"
+            className="relative mx-4 max-w-sm scale-95 transform animate-zoom-in rounded-lg bg-white p-8 text-center shadow-2xl transition-transform duration-300"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             <button
               onClick={handleCloseClick}
               className="absolute right-3 top-3 text-2xl font-bold text-gray-500 hover:text-gray-800"
               aria-label="Close fun fact"
+              title="Close fun fact"
             >
               &times;
             </button>

@@ -12,7 +12,26 @@ const DropdownMenu = ({ items, handleDropdownVisible }) => {
             className="mx-auto w-full rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-sm transition duration-300 hover:bg-blue-600 hover:shadow-xl"
             onClick={() => handleDropdownVisible((visible) => !visible)}
           >
-            <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+            <Link
+              to={`/${item.toLowerCase()}`}
+              className="block w-full text-center"
+              aria-label={`Go to ${item}`}
+              title={`Go to ${item}`}
+              onClick={() => {
+                window.fathom.trackEvent(
+                  `SIDEBAR_NAV_${item
+                    .replace(/[^a-zA-Z0-9_]/g, '')
+                    .toUpperCase()}`,
+                );
+                console.log(
+                  `Fathom Event Tracked: SIDEBAR_NAV_${item
+                    .replace(/[^a-zA-Z0-9_]/g, '')
+                    .toUpperCase()}`,
+                ); // For debugging
+              }}
+            >
+              {item}
+            </Link>
           </li>
         ))}
       </ul>
