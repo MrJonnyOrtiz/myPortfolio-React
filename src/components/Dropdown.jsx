@@ -23,11 +23,6 @@ const DropdownMenu = ({ items, handleDropdownVisible }) => {
                     .replace(/[^a-zA-Z0-9_]/g, '')
                     .toUpperCase()}`,
                 );
-                console.log(
-                  `Fathom Event Tracked: SIDEBAR_NAV_${item
-                    .replace(/[^a-zA-Z0-9_]/g, '')
-                    .toUpperCase()}`,
-                ); // For debugging
               }}
             >
               {item}

@@ -54,9 +54,6 @@ function Home() {
             onClick={() => {
               if (window.fathom) {
                 window.fathom.trackEvent('HOME_EXPLORE_PROJECTS_CLICK');
-                console.log(
-                  'Fathom Event Tracked: HOME_EXPLORE_PROJECTS_CLICK',
-                );
               }
             }}
           >

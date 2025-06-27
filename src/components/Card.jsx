@@ -22,7 +22,6 @@ function Card({ page, data }) {
       }
       if (eventCode) {
         window.fathom.trackEvent(eventCode);
-        console.log(`Fathom Event Tracked: ${eventCode}`); // For debugging
       }
     }
   };

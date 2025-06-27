@@ -71,11 +71,6 @@ function Sidebar({ menu }) {
                         .replace(/[^a-zA-Z0-9_]/g, '')
                         .toUpperCase()}`,
                     );
-                    console.log(
-                      `Fathom Event Tracked: SIDEBAR_NAV_${item
-                        .replace(/[^a-zA-Z0-9_]/g, '')
-                        .toUpperCase()}`,
-                    ); // For debugging
                   }
                 }}
               >
@@ -95,7 +90,6 @@ function Sidebar({ menu }) {
           onClick={() => {
             if (window.fathom) {
               window.fathom.trackEvent('SIDEBAR_LINKEDIN_CLICK');
-              console.log('Fathom Event Tracked: SIDEBAR_LINKEDIN_CLICK'); // For debugging
             }
           }}
           className="transition duration-300 hover:scale-110"

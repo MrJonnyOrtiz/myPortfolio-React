@@ -94,11 +94,6 @@ function Project({ projects }) {
                         .replace(/[^a-zA-Z0-9_]/g, '')
                         .toUpperCase()}`,
                     );
-                    console.log(
-                      `Fathom Event Tracked: PROJECTS_WEBSITE_${title
-                        .replace(/[^a-zA-Z0-9_]/g, '')
-                        .toUpperCase()}`,
-                    );
                   }
                 } catch (error) {
                   console.error('Analytics tracking error:', error);
@@ -124,11 +119,6 @@ function Project({ projects }) {
                         .replace(/[^a-zA-Z0-9_]/g, '')
                         .toUpperCase()}`,
                     );
-                    console.log(
-                      `Fathom Event Tracked: PROJECTS_GITHUB_${title
-                        .replace(/[^a-zA-Z0-9_]/g, '')
-                        .toUpperCase()}`,
-                    );
                   }
                 } catch (error) {
                   console.error('Analytics tracking error:', error);
@@ -151,11 +141,6 @@ function Project({ projects }) {
                       window.fathom.trackEvent(
                         `PROJECTS_CONTACT_${title
                           .replace(/[^a-zA-Z0-9]/g, '')
-                          .toUpperCase()}`,
-                      );
-                      console.log(
-                        `Fathom Event Tracked: PROJECTS_CONTACT_${title
-                          .replace(/[^a-zA-Z0-9_]/g, '')
                           .toUpperCase()}`,
                       );
                     }
