@@ -50,7 +50,7 @@ export default function About() {
         <li className="mx-auto max-w-prose">
           Looking for a partner to bring your digital vision to life?&nbsp;
           <Link to="/contact">
-            <span className="inline-block rounded-full bg-green-300 px-3 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400">
+            <span className="inline-block rounded-full bg-blue-500 px-3 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600">
               Let&apos;s Chat!
             </span>
           </Link>

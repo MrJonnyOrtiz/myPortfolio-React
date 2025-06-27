@@ -9,7 +9,7 @@ const DropdownMenu = ({ items, handleDropdownVisible }) => {
         {items.map((item) => (
           <li
             key={item}
-            className="mx-auto w-full rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-green-400 hover:shadow-xl"
+            className="mx-auto w-full rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-sm transition duration-300 hover:bg-blue-600 hover:shadow-xl"
             onClick={() => handleDropdownVisible((visible) => !visible)}
           >
             <Link to={`/${item.toLowerCase()}`}>{item}</Link>

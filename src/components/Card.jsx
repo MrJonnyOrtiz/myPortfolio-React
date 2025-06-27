@@ -58,7 +58,7 @@ function Card({ page, data }) {
         {page === 'projects' ? (
           <Link
             to={linkTarget}
-            className="mx-auto w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+            className="mx-auto w-fit rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
           >
             Read more
           </Link>
@@ -67,7 +67,7 @@ function Card({ page, data }) {
             href={linkTarget}
             target="_blank"
             rel="noreferrer"
-            className="mx-auto w-fit rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+            className="mx-auto w-fit rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
           >
             Read more
           </a>

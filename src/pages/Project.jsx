@@ -78,7 +78,7 @@ function Project({ projects }) {
         <div className="mt-4 flex flex-col items-center space-y-4">
           {site && id !== 1 && (
             <a
-              className="inline-block rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+              className="inline-block rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
               href={site}
               target="_blank"
               rel="noreferrer"
@@ -89,7 +89,7 @@ function Project({ projects }) {
           )}
           {github && id !== 4 && (
             <a
-              className="inline-block rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400"
+              className="inline-block rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
               href={github}
               target="_blank"
               rel="noreferrer"
@@ -101,7 +101,7 @@ function Project({ projects }) {
           {id === 1 && (
             <p className="text-center">
               <Link to="/contact">
-                <span className="inline-block rounded-full bg-green-300 px-4 py-2 font-semibold text-gray-800 shadow-md transition duration-300 hover:bg-green-400">
+                <span className="inline-block rounded-full bg-blue-500 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600">
                   Contact
                 </span>
               </Link>

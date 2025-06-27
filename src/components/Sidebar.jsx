@@ -3,23 +3,36 @@ import headshot from '../assets/headshot.smallerSize.webp';
 import reactLogo from '../assets/react.svg';
 import awsLogo from '../assets/amazonaws.svg';
 
+import { useEasterEgg } from '../hooks/useEasterEgg';
+
 import PropTypes from 'prop-types';
 
 function Sidebar({ menu }) {
+  const { easterEggFound, funFact, handleEasterEggClick, handleCloseClick } =
+    useEasterEgg();
   return (
     <aside className="hidden rounded-lg bg-white/80 p-4 text-center shadow-lg sm:block">
-      <Link to="/" aria-label="Go to Home" className="my-3 flex flex-col gap-3">
-        <img
-          className="mx-auto rounded-full"
-          src={headshot}
-          alt="Jonny Ortiz headshot"
-          width="150"
-          height="150"
-        />
-        <h1 className="text-xl font-bold text-gray-800">Jonny Ortiz</h1>
-      </Link>
+      <img
+        src={headshot}
+        className="mx-auto transform cursor-pointer rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+        alt="Jonny Ortiz smiling headshot"
+        width="150"
+        height="150"
+        onClick={handleEasterEggClick}
+        aria-label="Click for a fun fact"
+      />
+      <h1 className="py-3 text-xl font-bold text-gray-800">
+        <Link
+          to="/"
+          aria-label="Go to Home"
+          className="transition-colors duration-200 hover:text-blue-600 hover:underline"
+          // className="my-3 flex flex-col gap-3 "
+        >
+          Jonny Ortiz
+        </Link>
+      </h1>
+      <p className="font-semibold text-gray-700">Full Stack Developer</p>
       <div className="my-3 flex flex-col gap-3">
-        <p className="font-semibold text-gray-700">Full Stack Developer</p>
         <div className="flex items-center justify-center gap-3">
           <div className="mx-auto w-fit rounded-lg bg-white px-2 py-2 text-gray-800 shadow-md">
             <img
@@ -44,12 +57,12 @@ function Sidebar({ menu }) {
         </div>
       </div>
       <nav className="my-3 grid">
-        <ul className="grid gap-3 rounded-lg bg-green-300 p-3 font-semibold shadow-md">
+        <ul className="grid gap-3 rounded-lg bg-white/70 p-3 font-semibold shadow-md">
           {menu.map((item) => (
             <li key={item}>
               <Link
                 to={`/${item.toLowerCase()}`}
-                className="mx-auto block w-[75%] rounded-full bg-gray-800 p-3 text-white shadow-lg transition duration-300 hover:bg-white hover:text-gray-800"
+                className="mx-auto block w-[75%] rounded-full bg-blue-500 p-3 text-white shadow-lg transition duration-300 hover:bg-white hover:text-blue-600"
               >
                 {item}
               </Link>
@@ -75,6 +88,35 @@ function Sidebar({ menu }) {
           </svg>
         </a>
       </div>
+      {easterEggFound && (
+        <div
+          className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+          onClick={handleCloseClick} // Close when clicking outside modal
+        >
+          <div
+            className="animate-zoom-in relative mx-4 max-w-sm scale-95 transform rounded-lg bg-white p-8 text-center shadow-2xl transition-transform duration-300"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+          >
+            <button
+              onClick={handleCloseClick}
+              className="absolute right-3 top-3 text-2xl font-bold text-gray-500 hover:text-gray-800"
+              aria-label="Close fun fact"
+            >
+              &times;
+            </button>
+            <h2 className="mb-4 text-3xl font-extrabold text-blue-500">
+              Fun Fact!
+            </h2>
+            <p className="mb-6 max-w-prose text-lg text-gray-700">{funFact}</p>
+            <button
+              onClick={handleCloseClick}
+              className="rounded-full bg-blue-500 px-5 py-2 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
+            >
+              Got it!
+            </button>
+          </div>
+        </div>
+      )}
     </aside>
   );
 }
