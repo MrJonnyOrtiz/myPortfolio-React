@@ -42,17 +42,19 @@ function Project({ projects }) {
         <h1 className="text-center text-2xl font-bold text-gray-800 md:text-3xl">
           {title}
         </h1>
-        <div className="my-4">
-          <video
-            controls
-            name={title}
-            className="mx-auto aspect-video w-full max-w-[300px] rounded-lg shadow-md sm:max-w-[400px] md:max-w-[620px]"
-            aria-label={`Video showcasing ${title}`}
-          >
-            <source src={url} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        {url.length > 0 && (
+          <div className="my-4">
+            <video
+              controls
+              name={title}
+              className="mx-auto aspect-video w-full max-w-[300px] rounded-lg shadow-md sm:max-w-[400px] md:max-w-[620px]"
+              aria-label={`Video showcasing ${title}`}
+            >
+              <source src={url} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
         <div className="space-y-4 text-gray-700">
           {problem && (
             <p>

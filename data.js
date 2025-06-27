@@ -54,6 +54,20 @@ export const projects = [
     description:
       'Foodie Trekker is an intuitive and minimalist web application. Upon logging in, users can add new places to their list, record visit and meals details, and search for new restaurants and bars. The app also includes features like filtering by preferences (liked, disliked, favorite, wishlist), sorting places, and a Google Maps integration to visualize places.',
   },
+  {
+    id: 5,
+    url: '', // Placeholder for sazonmnmDemo.mp4
+    title: 'Sazón M&M Marketing Website',
+    tech: 'HTML5, CSS3, Javascript, AWS (CloudFormation, S3, CloudFront, Route53, Security Headers Policy, ACM)',
+    problem:
+      'The client needed a professional online presence to showcase their food truck menu, build brand recognition, and attract new customers through an engaging digital platform.',
+    solution:
+      'A modern, responsive marketing website featuring product showcases, engaging content, and clear calls-to-action to drive customer interest and inquiries.',
+    site: 'https://sazonmnm.com',
+    github: '', // Placeholder: Create a new repo for this
+    description:
+      "This project involved developing a dynamic and visually appealing marketing website for Sazón M&M. The primary goal was to create a strong online brand identity and provide an engaging platform for potential customers. I implemented a responsive design ensuring optimal viewing across all devices and deployed the site on AWS for high performance and scalability. The website features sections for menu items, location, and 'about us' story. I also established a streamlined CI/CD pipeline using GitHub Actions to ensure rapid and consistent updates for new content and marketing campaigns. In the first week of the website launch, there were 160 views.",
+  },
 ];
 
 export const menu = ['Projects', 'About', 'Contact', 'Blogs'];

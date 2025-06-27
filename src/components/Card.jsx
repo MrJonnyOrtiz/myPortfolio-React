@@ -18,7 +18,7 @@ function Card({ page, data }) {
       </div>
 
       {/* Video Section for Projects */}
-      {page === 'projects' && data.url && (
+      {page === 'projects' && data.url.length > 0 && (
         <div className="my-2 flex justify-center">
           <video
             controls
