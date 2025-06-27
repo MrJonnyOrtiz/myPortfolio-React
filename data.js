@@ -58,7 +58,7 @@ export const projects = [
     id: 5,
     url: '', // Placeholder for sazonmnmDemo.mp4
     title: 'Sazón M&M Marketing Website',
-    tech: 'HTML5, CSS3, Javascript, AWS (CloudFormation, S3, CloudFront, Route53, Security Headers Policy, ACM)',
+    tech: 'HTML5, CSS3, Javascript, AWS (CloudFormation, S3, CloudFront, Route53, Security Headers Policy, ACM, OAI)',
     problem:
       'The client needed a professional online presence to showcase their food truck menu, build brand recognition, and attract new customers through an engaging digital platform.',
     solution:
