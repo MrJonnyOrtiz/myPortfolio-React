@@ -28,7 +28,7 @@ export default function About() {
 
       <div className="sm:hidden">
         <img
-          className="animate-fade-in mx-auto my-3 rounded-full shadow-lg"
+          className="mx-auto my-3 animate-fade-in rounded-full shadow-lg"
           src={headshot}
           alt="Jonny Ortiz smiling headshot"
           width="150"
@@ -90,6 +90,15 @@ export default function About() {
           </ul>
         </div>
       </div>
+
+      <iframe
+        src="https://test.gonovanexus.com/apply?orgId=01K0N1B9Q47W4484KJGX2B127Y"
+        width="100%"
+        height="800px"
+        style="border: none;"
+      >
+        mentoring
+      </iframe>
 
       {/* LinkedIn Profile Button */}
       <div className="mx-auto mt-4 sm:hidden">
