@@ -95,9 +95,10 @@ export default function About() {
         src="https://test.gonovanexus.com/apply?orgId=01K0N1B9Q47W4484KJGX2B127Y"
         width="100%"
         height="800px"
-        style="border: none;"
+        style={{ border: 'none' }}
+        title="Mentorship Application"
       >
-        mentoring
+        mentoring applicatoin
       </iframe>
 
       {/* LinkedIn Profile Button */}
