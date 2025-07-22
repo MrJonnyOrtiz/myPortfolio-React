@@ -91,7 +91,7 @@ export default function About() {
         </div>
       </div>
 
-      <iframe
+      {/* <iframe
         src="https://test.gonovanexus.com/apply?orgId=01K0N1B9Q47W4484KJGX2B127Y"
         width="100%"
         height="800px"
@@ -99,7 +99,7 @@ export default function About() {
         title="Mentorship Application"
       >
         mentoring applicatoin
-      </iframe>
+      </iframe> */}
 
       {/* LinkedIn Profile Button */}
       <div className="mx-auto mt-4 sm:hidden">
