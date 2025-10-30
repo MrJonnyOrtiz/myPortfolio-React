@@ -46,7 +46,19 @@ Resources:
             - '-topic'
 
   #
-  # Our Lambda function.  Basic code has been added.  You will replace the code later via your Github repo.
+  # API Gateway
+  #
+  ContactUsApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors:
+        AllowMethods: "'POST,OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
+
+  #
+  # Lambda function
   #
   ContactUsFunction:
     Type: AWS::Serverless::Function
@@ -64,6 +76,13 @@ Resources:
           Properties:
             Path: /
             Method: post
+            RestApiId: !Ref ContactUsApi
+        OptionsEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: options
+            RestApiId: !Ref ContactUsApi
       Environment:
         Variables:
           ReCaptchaSecret: !Ref ReCaptchaSecret
@@ -76,7 +95,7 @@ Outputs:
     Value: !Join
       - ''
       - - https://
-        - !Ref ServerlessRestApi
+        - !Ref ContactUsApi
         - '.execute-api.'
         - !Ref 'AWS::Region'
         - '.amazonaws.com/Prod'

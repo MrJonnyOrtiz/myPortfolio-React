@@ -5,5 +5,5 @@ resolve_s3 = true
 s3_prefix = "jonnyortiz-contact-us"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "Subject=\"Contact Form Submission\" ToEmailAddress=\"mr.jonny.ortiz@gmail.com\" ReCaptchaSecret=\"6Lf6QvwrAAAAAP7Tk_O5U8UpGmbhvETNOl_c1-vb\""
+parameter_overrides = "Subject=\"Contact Form Submission\" ToEmailAddress=\"mr.jonny.ortiz@gmail.com\" ReCaptchaSecret=\"6LfBYvwrAAAAAMToDt_9ZTxNa8jzbxYAlsK5H4od\""
 image_repositories = []

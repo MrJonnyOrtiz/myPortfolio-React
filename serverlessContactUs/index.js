@@ -3,6 +3,15 @@ var querystring = require('querystring');
 var AWS = require('aws-sdk');
 
 exports.handler = function (event, context, callback) {
+  // handle CORS preflight request
+  if (event.httpMethod === 'OPTIONS') {
+    return callback(null, {
+      statusCode: '200',
+      headers: getCorsHeaders(),
+      body: '',
+    });
+  }
+
   try {
     // Input validation
     if (!event.body) {
