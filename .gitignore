@@ -36,3 +36,7 @@ Thumbs.db
 # aws sam
 .aws-sam/
 samconfig.toml
+
+# Configuration files with sensitive data
+*.config.js
+config/
